@@ -2,84 +2,160 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>留学生来华学校信息查询</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
         }
         body {
-            background: #f7f8fa;
+            font-family: '微软雅黑', sans-serif;
+            background-color: #f4f7fb;
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
         }
         h1 {
-            text-align: center;
+            color: #1e3c72;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #4a6fa5;
+            font-size: 1.2em;
+        }
+        .school-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .school-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 5px solid #4a90e2;
+        }
+        .school-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+        }
+        .school-name {
+            font-size: 1.5em;
+            color: #1e3c72;
+            margin-bottom: 10px;
+        }
+        .school-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #5a6b7a;
+        }
+        .school-type, .school-location {
+            background: #e9f0f9;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+        .school-desc {
             color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        .intro {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
             line-height: 1.6;
+            margin-bottom: 20px;
         }
-        .item {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
+        .btn-detail {
+            display: inline-block;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.2s;
         }
-        .item h3 {
-            color: #333;
-            margin-bottom: 6px;
+        .btn-detail:hover {
+            background-color: #1e3c72;
         }
-        .item p {
-            color: #666;
-            font-size: 14px;
-        }
-        .footer {
+        footer {
             text-align: center;
-            margin-top: 30px;
-            color: #999;
-            font-size: 12px;
+            margin-top: 50px;
+            color: #7f8c8d;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>留学生来华学校信息查询</h1>
-        <p class="intro">为留学生提供简单、清晰的中国院校信息参考</p>
+        <header>
+            <h1>🎓 留学生来华学校信息查询</h1>
+            <div class="subtitle">为留学生提供简单、清晰的中国院校信息参考</div>
+        </header>
 
-        <div class="item">
-            <h3>北京大学</h3>
-            <p>类型：综合类 | 位置：北京 | 简介：国内顶尖综合大学，国际交流项目丰富</p>
-        </div>
-        <div class="item">
-            <h3>清华大学</h3>
-            <p>类型：综合类 | 位置：北京 | 简介：理工与文科并重，国际认可度极高</p>
-        </div>
-        <div class="item">
-            <h3>复旦大学</h3>
-            <p>类型：综合类 | 位置：上海 | 简介：华东地区顶尖名校，国际化程度高</p>
-        </div>
-        <div class="item">
-            <h3>南京大学</h3>
-            <p>类型：综合类 | 位置：南京 | 简介：历史悠久，人文社科实力强劲</p>
+        <div class="school-grid">
+            <!-- 北京大学卡片 -->
+            <div class="school-card">
+                <div class="school-name">北京大学</div>
+                <div class="school-meta">
+                    <span class="school-type">综合类</span>
+                    <span class="school-location">北京</span>
+                </div>
+                <div class="school-desc">
+                    国内顶尖综合大学，国际交流项目丰富，QS排名靠前。
+                </div>
+                <a href="peking.html" class="btn-detail">查看详情 →</a>
+            </div>
+
+            <!-- 清华大学卡片 -->
+            <div class="school-card">
+                <div class="school-name">清华大学</div>
+                <div class="school-meta">
+                    <span class="school-type">综合类</span>
+                    <span class="school-location">北京</span>
+                </div>
+                <div class="school-desc">
+                    理工与文科并重，国际认可度极高，拥有众多国际学生。
+                </div>
+                <a href="tsinghua.html" class="btn-detail">查看详情 →</a>
+            </div>
+
+            <!-- 复旦大学卡片 -->
+            <div class="school-card">
+                <div class="school-name">复旦大学</div>
+                <div class="school-meta">
+                    <span class="school-type">综合类</span>
+                    <span class="school-location">上海</span>
+                </div>
+                <div class="school-desc">
+                    华东地区顶尖名校，国际化程度高，地处上海。
+                </div>
+                <a href="fudan.html" class="btn-detail">查看详情 →</a>
+            </div>
+
+            <!-- 南京大学卡片 -->
+            <div class="school-card">
+                <div class="school-name">南京大学</div>
+                <div class="school-meta">
+                    <span class="school-type">综合类</span>
+                    <span class="school-location">南京</span>
+                </div>
+                <div class="school-desc">
+                    历史悠久，人文社科实力强劲，校园环境优美。
+                </div>
+                <a href="nanjing.html" class="btn-detail">查看详情 →</a>
+            </div>
+
         </div>
 
-        <div class="footer">
-            本网站仅作信息展示，非盈利、非商用 | 无广告 | 完全免费
-        </div>
+        <footer>
+            <p>© 2025 留学生来华信息查询 | 让留学中国更简单</p>
+        </footer>
     </div>
 </body>
 </html>
